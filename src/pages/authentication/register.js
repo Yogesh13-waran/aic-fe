@@ -34,6 +34,7 @@ const Register = () => {
         // Handle errors, e.g., display an error message
         if (error.response.status === 400) {
           message.error(error.response.data.message);
+          navigate('/')
         }
         if (error.response.status === 500) {
           message.error("Something went wrong. Try again later");

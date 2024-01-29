@@ -48,7 +48,7 @@ const Home = () => {
   const dateFullCellRender = (value) => {
     const formattedDate = value.format("YYYY-MM-DD");
     const eventList = events[formattedDate];
-
+console.loig(eventList)
     let eventCount = 0;
     if (eventList) {
       eventCount = eventList.length;
@@ -69,6 +69,7 @@ const Home = () => {
       </div>
     );
   };
+
 // call api while clicking events
   const onSelect = (value) => {
     const formattedDate = value.format("YYYY-MM-DD");
