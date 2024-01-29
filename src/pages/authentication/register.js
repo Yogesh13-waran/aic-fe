@@ -6,6 +6,8 @@ import axios from "axios";
 import { message } from "antd";
 
 const Register = () => {
+  const url="http://35.154.36.162:3103"
+
   const [name, setName] = useState("");
   const navigate = useNavigate();
 
@@ -19,7 +21,7 @@ const Register = () => {
 
     if (name.length > 2) {
       try {
-        const response = await axios.post("http://localhost:7000/register", {
+        const response = await axios.post(`${url}/register`, {
           name: name,
         });
 

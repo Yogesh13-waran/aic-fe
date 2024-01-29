@@ -7,6 +7,8 @@ import axios from "axios";
 const { Meta } = Card;
 
 const Mypost = () => {
+  const url="http://35.154.36.162:3103"
+
   const navigate = useNavigate();
   const userDetails = JSON.parse(localStorage.getItem("credentials"));
   const [myPostData, setMypostData] = useState([]);
@@ -16,7 +18,7 @@ const Mypost = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:7000/allcontent?userId=${userDetails.created_id}`
+          `${url}/allcontent?userId=${userDetails.created_id}`
         );
         setMypostData(response.data.response);
       } catch (error) {

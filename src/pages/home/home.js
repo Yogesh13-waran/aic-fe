@@ -8,6 +8,8 @@ import { UserOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const url="http://35.154.36.162:3103"
+
   const currentDate = new Date();
   const year = currentDate.getFullYear();
   const month = String(currentDate.getMonth() + 1).padStart(2, "0");
@@ -92,7 +94,7 @@ const Home = () => {
   const fetchDataForAvailability = async () => {
     try {
       const responseAvailability = await axios.get(
-        `http://localhost:7000/openslot?date=${selectedDate}`
+        `${url}/openslot?date=${selectedDate}`
       );
       setSlotAvailability(responseAvailability.data.data);
     } catch (error) {
@@ -104,7 +106,7 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:7000/slotinfo");
+        const response = await axios.get(`${url}/slotinfo`);
         setSlotData(response.data.data);
       } catch (error) {
         alert("Try again later")

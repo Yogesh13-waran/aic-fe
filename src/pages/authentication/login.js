@@ -6,6 +6,7 @@ import { message } from "antd";
 import { useNavigate } from "react-router-dom";
 
 function Login() {
+  const url="http://35.154.36.162:3103"
   const [name, setName] = useState("");
   const navigate = useNavigate();
 
@@ -19,7 +20,7 @@ function Login() {
 
     if (name.length > 2) {
       try {
-        const response = await axios.post("http://localhost:7000/login", {
+        const response = await axios.post(`${url}/login`, {
           name: name,
         });
 

@@ -3,6 +3,7 @@ import { Switch, message, Card } from "antd";
 import axios from "axios";
 
 const { Meta } = Card;
+const url="http://35.154.36.162:3103"
 
 function formatTimestamp(date) {
   const options = {
@@ -51,7 +52,7 @@ const Slot = ({
       const year = selectedDate.slice(0, 4).toString();
       const month = selectedDate.slice(5, 7).toString();
 
-      const response = await axios.post(`http://localhost:7000/calendarpost`, {
+      const response = await axios.post(`${url}/calendarpost`, {
         role: userDetails.role,
         slotUpdaterId: userDetails.created_id,
         date: selectedDate,
@@ -71,7 +72,7 @@ const Slot = ({
       try {
         if (userDetails.role === 1) {
           const response1 = await axios.get(
-            `http://localhost:7000/calendarcheck?date=${selectedDate}&time=${slotExact}&userId=${userDetails.created_id}`
+            `${url}/calendarcheck?date=${selectedDate}&time=${slotExact}&userId=${userDetails.created_id}`
           );
           //   console.log(response1.data.response.showUpload,"checking");
           setToggleDisable(response1.data.response.showToggle);
@@ -86,7 +87,7 @@ const Slot = ({
           message.success(response1.data.message);
         } else if (userDetails.role !== 1) {
           const response2 = await axios.get(
-            `http://localhost:7000/usercalendar?date=${selectedDate}&time=${slotExact}&userId=${userDetails.created_id}`
+            `${url}/usercalendar?date=${selectedDate}&time=${slotExact}&userId=${userDetails.created_id}`
           );
           setUploadDisable(response2.data.response.showUpload);
           setSlotData(
@@ -137,7 +138,7 @@ const Slot = ({
     formData.append("image", imageObj.file); // Append the entire File object
     try {
       const response = await axios.post(
-        "http://localhost:7000/upload",
+        `${url}/upload`,
         formData
       );
      
@@ -146,7 +147,7 @@ const Slot = ({
       setConfirmImg(response.data.mediaUrl);
       if (response.data.mediaUrl) {
         const response1 = await axios.post(
-          "http://localhost:7000/postcontent",
+          `${url}/postcontent`,
           {
             role: userDetails.role,
             date: selectedDate,
