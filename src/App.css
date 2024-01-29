@@ -1,0 +1,119 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* home css */
+body{
+  width:95vw;
+  height:100vh;
+  margin:0px;
+  padding: 0px;
+
+}
+.slot-btn-home{
+height: 40px;
+border-radius: 10px;
+border: none !important;
+cursor: pointer;
+font-weight: 700;
+width: 70%;
+}
+.slot-btn-home:hover{
+background-color: rgb(219, 243, 219) !important;
+}
+.logo-home{
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  width: 100%;
+  background-color: rgb(246, 246, 247);
+  padding: 10px;
+}
+.slot-header-btn{
+  background-color: rgb(246, 246, 247);
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  height: 25px;
+}
+/* slot */
+.slot-update-container-disable{
+  pointer-events: none !important;
+  opacity: 0.5;
+  background-color: rgb(207, 206, 204);
+  padding: 20px;
+  border-radius: 10px;
+}
+.slot-update-container{
+  background-color: rgb(219, 243, 219);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* button upload */
+.upload-button-container-disable{
+  pointer-events: none !important;
+  opacity: 0.5;
+  background-color: rgb(207, 206, 204);
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 5px;
+  text-align: center;
+}
+.upload-button-container{
+  margin-top: 5px;
+  background-color: rgb(219, 243, 219);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+.upload-btn-img-over{
+  cursor: pointer;
+}
+.ant-modal-footer{
+  display: none !important;
+}
+.ant-card{
+  width: 40% !important;
+}
+.card-content .ant-card{
+  width: 100% !important;
+}
+.ant-modal{
+  width: 60% !important;
+}

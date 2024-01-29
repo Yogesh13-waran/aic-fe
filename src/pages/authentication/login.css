@@ -1,0 +1,24 @@
+.loginOutline{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 100vh;
+   flex-direction: column !important;
+}
+.login-input{
+    width: 200px;
+    height: 40px;
+    border-radius: 20px;
+    border: 1px solid gray !important;
+    outline: none !important;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.login-btn{
+    width: 200px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: rgb(250, 122, 43);
+    border: none !important;
+    cursor: pointer;
+}
